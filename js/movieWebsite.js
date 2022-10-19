@@ -44,8 +44,8 @@ for (let i = 1; i <= 5; i++) {
 
             // 撈資料部分
             // 撈出電影名稱(title)
-            const textResultsTitles = responseTextResults.title;
-            // console.log(textResultsTitles);//確認撈取成功
+            const movieTitles = responseTextResults.title;
+            // console.log(movieTitles);//確認撈取成功
             // 撈出電影評分
             const movieScore = responseTextResults.vote_average;
             // console.log(movieScore)//確認撈取成功
@@ -63,11 +63,24 @@ for (let i = 1; i <= 5; i++) {
 
             // 新增element標籤為LI
             let listItem = document.createElement("li");
+            // listItem.classList.add('movie-info');
+            listItem.classList.add('movie');
             // 在LI內塞入剛剛撈取出來的電影名稱
             listItem.innerHTML = `
-      <p>${textResultsTitles}</p>
-      <span>${movieScore}</span>
-      `;
+            <img class="movie-img"
+                src="${posterPath}"
+                alt="Image">
+            <div class="movie-info">
+                <h3>${movieTitles}</h3>
+                <!-- 電影評分 -->
+                <span class="highscore">${movieScore}</span>
+            </div>
+
+            <div class="overview fz12">
+                <h3>概述</h3>
+                ${movieOverview}
+            </div>
+            `;
 
             // 父節點.appendChild(子節點)
             movieList.appendChild(listItem);
