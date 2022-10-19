@@ -1,0 +1,147 @@
+// @import 'color';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+//顏色
+$primary-color: #2c192b;
+$secondary-color: #522647;
+$mid-light-color: #c96f92;
+$light-color: #ffe2ed;
+
+
+.colorW {
+    color: white;
+}
+
+
+.d-flex {
+    display: flex;
+    // flex-direction: row;
+    flex-wrap: wrap;
+}
+
+//評分顏色
+// $m-high-score:$light-color;
+// $m-mid-score:$mid-light-color;
+// $m-low-score:$secondary-color;
+
+
+body {
+    background-color: $primary-color;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: $secondary-color;
+}
+
+.search {
+    background-color: transparent;
+    border: 1.5px solid $mid-light-color;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: $light-color ;
+    font-family: inherit;
+
+    &:focus {
+        outline: 0;
+        background-color: $primary-color ;
+        border: 1.5px solid $primary-color;
+    }
+
+    //修正input內的提示文字顏色
+    &::placeholder {
+        color: $mid-light-color;
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: $secondary-color;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        .overview {
+            transform: translateY(0%);
+            cursor: pointer;
+        }
+    }
+}
+
+.movie-img {
+    width: 100%;
+
+}
+
+.movie-info {
+    color: $light-color;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-info h3 {
+    font-size: 1.2rem;
+}
+
+.movie-info span {
+    background-color: $primary-color;
+    // color: $mid-light-color;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 900;
+}
+
+.movie-info span.highscore {
+    color: $light-color;
+}
+
+.movie-info span.midscore {
+    color: $mid-light-color;
+}
+
+.movie-info span.lowscore {
+    color: $secondary-color;
+}
+
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $light-color;
+    padding: 1rem;
+    max-height: 50%;
+    transform: translateY(101%);
+    transition: transform 0.5s ease-in;
+    overflow-y: scroll;
+}
+
+.fz16 {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fz12 {
+    font-size: 14px;
+    line-height: 1.5;
+}
