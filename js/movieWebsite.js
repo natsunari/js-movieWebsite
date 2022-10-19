@@ -16,8 +16,8 @@ const filterMovie =
 const moviePage = "&page=";
 
 //海報縮圖設定
-const posterBaseUrl = "https://image.tmdb.org/t/p/w500";
-// const posterPath = "";
+const moviePosterImgBaseUrl = "https://image.tmdb.org/t/p/w500";
+// const moviePosterImg = "";
 
 
 
@@ -53,8 +53,8 @@ for (let i = 1; i <= 5; i++) {
             const movieOverview = responseTextResults.overview;
             // console.log(movieOverview);//確認撈取成功
             // 撈出海報
-            const posterPath = posterBaseUrl + responseTextResults.poster_path;
-            // console.log(posterPath);//確認撈取成功
+            const moviePosterImg = moviePosterImgBaseUrl + responseTextResults.poster_path;
+            // console.log(moviePosterImg);//確認撈取成功
 
 
             // 將資料放入指定位置
@@ -68,7 +68,7 @@ for (let i = 1; i <= 5; i++) {
             // 在LI內塞入剛剛撈取出來的電影名稱
             listItem.innerHTML = `
             <img class="movie-img"
-                src="${posterPath}"
+                src="${moviePosterImg}"
                 alt="Image">
             <div class="movie-info">
                 <h3>${movieTitles}</h3>
